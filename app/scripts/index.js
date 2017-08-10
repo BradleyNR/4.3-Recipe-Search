@@ -3,7 +3,7 @@ let handlebars = require('handlebars');
 
 
 var searchTerm = '';//'search-term'
-var searchUrl = 'http://recipepuppyproxy.herokuapp.com/api/' + '?q=' + searchTerm;
+var searchUrl = 'https://recipepuppyproxy.herokuapp.com/api/' + '?q=' + searchTerm;
 
 fetch(searchUrl).then(function(res){
   return res.json();
