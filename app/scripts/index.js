@@ -12,7 +12,7 @@ fetch(searchUrl).then(function(res){
 //click
 $('#search-button').on('click', function(e){
   e.preventDefault();
-  let newSearchTerms = document.getElementById("search").value;
+  let newSearchTerms = encodeURI(document.getElementById("search").value);
   searchUrl = 'http://recipepuppyproxy.herokuapp.com/api/'
   console.log(newSearchTerms);
   console.log(searchUrl + "?q=" + newSearchTerms);
