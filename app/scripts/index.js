@@ -3,7 +3,7 @@ let handlebars = require('handlebars');
 
 
 var searchTerm = '';//'search-term'
-var searchUrl = 'https://recipepuppyproxy.herokuapp.com/api/' + '?q=' + searchTerm;
+var searchUrl = 'https://recipepuppyproxy.herokuapp.com/api/' + '?i=' + searchTerm;
 
 fetch(searchUrl).then(function(res){
   return res.json();
@@ -13,6 +13,7 @@ fetch(searchUrl).then(function(res){
 //submit form
 $('.search').on('submit', function(e){
   let newSearchTerms = encodeURI(document.getElementById("search").value);
+  console.log(newSearchTerms);
   searchUrl = 'https://recipepuppyproxy.herokuapp.com/api/'
   newRecipes(newSearchTerms);
 });
@@ -21,6 +22,7 @@ $('.search').on('submit', function(e){
 $('#search-button').on('click', function(e){
   e.preventDefault();
   let newSearchTerms = encodeURI(document.getElementById("search").value);
+  console.log(newSearchTerms);
   searchUrl = 'https://recipepuppyproxy.herokuapp.com/api/'
   newRecipes(newSearchTerms);
 });
@@ -28,7 +30,7 @@ $('#search-button').on('click', function(e){
 
 function newRecipes(newSearchTerms){
   $('#recipe-template-area').empty();
-  fetch(searchUrl + '?q=' + newSearchTerms).then(function(res){
+  fetch(searchUrl + '?i=' + newSearchTerms).then(function(res){
     return res.json();
   }).then(run);
 }
