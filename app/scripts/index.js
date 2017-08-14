@@ -9,13 +9,19 @@ fetch(searchUrl).then(function(res){
   return res.json();
 }).then(run);
 
-//click
+
+//submit form
+$('.search').on('submit', function(e){
+  let newSearchTerms = encodeURI(document.getElementById("search").value);
+  searchUrl = 'http://recipepuppyproxy.herokuapp.com/api/'
+  newRecipes(newSearchTerms);
+});
+
+//click button
 $('#search-button').on('click', function(e){
   e.preventDefault();
   let newSearchTerms = encodeURI(document.getElementById("search").value);
   searchUrl = 'http://recipepuppyproxy.herokuapp.com/api/'
-  console.log(newSearchTerms);
-  console.log(searchUrl + "?q=" + newSearchTerms);
   newRecipes(newSearchTerms);
 });
 
