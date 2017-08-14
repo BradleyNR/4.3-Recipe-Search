@@ -13,7 +13,7 @@ fetch(searchUrl).then(function(res){
 //submit form
 $('.search').on('submit', function(e){
   let newSearchTerms = encodeURI(document.getElementById("search").value);
-  searchUrl = 'http://recipepuppyproxy.herokuapp.com/api/'
+  searchUrl = 'https://recipepuppyproxy.herokuapp.com/api/'
   newRecipes(newSearchTerms);
 });
 
@@ -21,7 +21,7 @@ $('.search').on('submit', function(e){
 $('#search-button').on('click', function(e){
   e.preventDefault();
   let newSearchTerms = encodeURI(document.getElementById("search").value);
-  searchUrl = 'http://recipepuppyproxy.herokuapp.com/api/'
+  searchUrl = 'https://recipepuppyproxy.herokuapp.com/api/'
   newRecipes(newSearchTerms);
 });
 
